@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            border: 0px solid black;
+        }
+
+        .container {
+            width: 500px;
+            height: 500px;
+            display: grid;
+            grid: 1fr 1fr 1fr / 1fr 1fr 1fr;
+        }
+
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: contain;
+        }
+
+        img:hover {
+            transform: rotate(10deg);
+            transition: 500ms;
+            -webkit-transition: 500ms;
+        }
+
+        #randomizer {
+            position: absolute;
+            bottom: 20px;
+            padding:.5em 1em;
+            font-size: 1.2rem;
+            background:rgb(161, 20, 20);
+            color:white;
+            font-weight:bold;
+            cursor: pointer;
+            border: 5px solid black;
+        }
+    </style>
+
+
+</head>
+
+<body
+    style="margin:0; flex-direction: column;display:flex; justify-content:center; align-items: center; height: 100vh; background:rgba(252, 207, 207, 0.979);">
+
+    <div class="container">
+        <div><img
+                src="https://cdn.shopify.com/s/files/1/1369/2605/articles/White_Gift_Box_with_Red_Bow_PNG_Image_2048x.png?v=1511752878"
+                alt="">
+        </div>
+        <div class="santa-div"><img src="https://juststickers.in/wp-content/uploads/2016/11/santa-claus.png" alt="">
+        </div>
+        <div><img
+                src="https://cdn.shopify.com/s/files/1/1369/2605/articles/White_Gift_Box_with_Red_Bow_PNG_Image_2048x.png?v=1511752878"
+                alt=""></div>
+        <div><img
+                src="https://cdn.shopify.com/s/files/1/1369/2605/articles/White_Gift_Box_with_Red_Bow_PNG_Image_2048x.png?v=1511752878"
+                alt=""></div>
+        <div class="santa-div"><img src="https://juststickers.in/wp-content/uploads/2016/11/santa-claus.png" alt="">
+        </div>
+        <div><img
+                src="https://cdn.shopify.com/s/files/1/1369/2605/articles/White_Gift_Box_with_Red_Bow_PNG_Image_2048x.png?v=1511752878"
+                alt=""></div>
+        <div class="santa-div"><img src="https://juststickers.in/wp-content/uploads/2016/11/santa-claus.png" alt="">
+        </div>
+        <div><img
+                src="https://cdn.shopify.com/s/files/1/1369/2605/articles/White_Gift_Box_with_Red_Bow_PNG_Image_2048x.png?v=1511752878"
+                alt=""></div>
+        <div id="test" class="santa-div"><img src="https://juststickers.in/wp-content/uploads/2016/11/santa-claus.png" alt="">
+        </div>
+        
+    </div>
+
+    <br>
+    <br>
+    <button id="randomizer">Change Background</button>
+
+
+
+
+
+    <script>
+
+        var santa = document.querySelectorAll(".santa-div");
+        for(let i = 0 ; i < santa.length; i++){
+            santa[i].addEventListener("click", myFunction);
+        }
+
+        function myFunction() {
+        this.style.display = "none";
+        }
+
+        let max = 999999;
+        let min = 111111;
+
+
+        document.getElementById("randomizer").addEventListener("click", rndColor)
+
+        function rndColor() {
+
+            let x = "#" + (Math.floor(Math.random() * (max - min + 1) ) + min);
+            console.log(x)
+            document.body.style.backgroundColor = x;
+        }
+
+
+        
+    </script>
+
+</body>
+
+</html>

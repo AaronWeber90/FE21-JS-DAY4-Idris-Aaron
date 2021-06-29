@@ -13,10 +13,67 @@
     <input id="firstNameInput" type="text" value="First Name">
     <input id="lastnNameInput" type="text" value="Last Name">
     <input id="ageInput" type="text" value="Age">
+    <input id ="submitBtn" type="submit" value="Submit">
+
+    <br>
+    <select name="" id="selectjob-el">
+        <option value="It">It</option>
+        <option value="Retail">Retail</option>
+        <option value="Finance">Finance</option>
+    </select>
+
+    <div style="padding:3em; margin:3em; background: skyblue;" id="show-input"></div>
+
+
+
+<script>
+
+
+    let extractData = () => {
+
+    let firstName = document.getElementById("firstNameInput").value;
+    console.log(firstName)
+    
+    let lastName = document.getElementById("lastnNameInput").value;
+    console.log(lastName)
+
+    let age = document.getElementById("ageInput").value;
+    console.log(age)
+
+    let person = `Your name is <span id='test'>${firstName} ${lastName}</span> and your age is ${age}`;
+    document.getElementById("show-input").innerHTML = person;
+    console.log(person);
+
+     if (firstName.length > 5) {
+         document.getElementById("test").style.color = "green"}
+         else {
+            document.getElementById("test").style.color = "red";
+         }
+
+
+
+    let selectedJob = document.getElementById("selectjob-el").value;
+    console.log(selectedJob)
+
+    if (selectedJob == "It") {
+        document.getElementById("show-input").style.background = "purple";
+    } else if (selectedJob == "Retail") {
+        document.getElementById("show-input").style.background = "green";
+    } else 
+        document.getElementById("show-input").style.background = "yellow";
+}
 
 
 
 
+    document.getElementById("submitBtn").addEventListener("click", extractData);
+
+
+
+
+
+
+</script>
 </body>
 
 </html>
